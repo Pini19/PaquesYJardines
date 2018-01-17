@@ -3,6 +3,8 @@ package com.example.android.parquesyjardines;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.util.JsonReader;
+import android.util.JsonToken;
+import android.util.Log;
 
 import java.io.IOError;
 import java.io.IOException;
@@ -15,6 +17,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.jar.Attributes;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -85,34 +88,61 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin>{
                     List<String> categorias = new ArrayList<String>();
                     reader.beginObject();
                     reader.nextName();
-                    reader.beginArray();
-                    while(reader.hasNext()) {
-                        categorias.add(obtenerContent(reader));
+                    if(reader.peek() == JsonToken.BEGIN_ARRAY) {
+                        reader.beginArray();
+                        while(reader.hasNext()) {
+
+                            categorias.add(obtenerContent(reader));
+                        }
+                        reader.endArray();
+                        reader.endObject();
+                    } else {
+                        reader.beginObject();
+                        while(reader.hasNext()) {
+
+                            categorias.add(obtenerContent(reader));
+                        }
+                        reader.endObject();
+
                     }
+
                     uno.put("categorias", categorias);
                 } else if (name.equals("descripcion")){
                     uno.put("descripcion", obtenerContent(reader));
                 } else if(name.equals("horario")) {
-                    uno.put("horario", reader.nextString());
+                    if(reader.peek() != JsonToken.BEGIN_OBJECT) {
+                        uno.put("horario", reader.nextString());
+                    } else {
+                        reader.skipValue();
+                        uno.put("horario", "No dispone de horario");
+                    }
                 } else if(name.equals("identificador")) {
-                    uno.put("identificador", reader.nextString());
+                    uno.put("identificador", reader.nextInt());
                 } else if(name.equals("localizacion")) {
                     uno.put("localizacion", obtenerContent(reader));
                 } else if(name.equals("nombre")) {
                     uno.put("nombre", obtenerContent(reader));
                 } else if(name.equals("url")) {
                     uno.put("url", reader.nextString());
+                } else if (name.equals("direccion")) {
+                    reader.beginArray();
+                    uno.put("direccion", reader.nextString());
+                    reader.skipValue();
+                    reader.endArray();
                 } else {
                     reader.skipValue();
                 }
             }
+            reader.endObject();
             return uno;
         }
 
         public String obtenerContent(JsonReader reader) throws IOException {
-            reader.beginObject();
-            reader.nextString();
+            if(reader.peek() == JsonToken.BEGIN_OBJECT) {
+                reader.beginObject();
+            }
             String dato = null;
+
             while(reader.hasNext()) {
                 String name = reader.nextName();
                 if (name.equals("content")) {
@@ -120,6 +150,9 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin>{
                 } else {
                     reader.skipValue();
                 }
+            }
+            if(reader.peek() == JsonToken.END_OBJECT) {
+                reader.endObject();
             }
             return dato;
         }
