@@ -95,14 +95,13 @@
                 android:padding="10dp"
                 android:textSize="20sp"
                 android:text="@string/localizacion"/>
-            <TextView
-                android:id="@+id/enlaceLoc"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnGM"
+                android:layout_width="159dp"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textSize="14sp"
-                android:text=""
-                android:autoLink="web"/>
+                android:text="Ver en Google Maps"
+                android:textColor="#000000"
+                android:background="@drawable/borde_redonde"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
