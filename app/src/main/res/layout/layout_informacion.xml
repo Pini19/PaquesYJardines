@@ -9,59 +9,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="10dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="17sp"
                 android:text="@string/categoria"/>
             <TextView
                 android:id="@+id/textoCat"
-                android:layout_width="0dp"
-                android:layout_weight="7"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text=""/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/descripcion"/>
-            <TextView
-                android:id="@+id/textoDesc"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text=""/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/direccion"/>
-            <TextView
-                android:id="@+id/textoDir"
-                android:layout_width="0dp"
-                android:layout_weight="7"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:textSize="14sp"
                 android:text=""/>
         </LinearLayout>
         <LinearLayout
@@ -72,67 +38,105 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="17sp"
+                android:text="@string/descripcion"/>
+            <TextView
+                android:id="@+id/textoDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:text=""/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="17sp"
+                android:text="@string/direccion"/>
+            <TextView
+                android:id="@+id/textoDir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:text=""/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="17sp"
                 android:text="@string/horario"/>
             <TextView
                 android:id="@+id/textoHorario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="14sp"
                 android:text=""/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="17sp"
                 android:text="@string/identificador"/>
             <TextView
                 android:id="@+id/textoId"
-                android:layout_width="0dp"
-                android:layout_weight="7"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="14sp"
                 android:text=""/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="17sp"
                 android:text="@string/localizacion"/>
             <TextView
                 android:id="@+id/enlaceLoc"
-                android:layout_width="0dp"
-                android:layout_weight="7"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="14sp"
                 android:text=""
                 android:autoLink="web"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="17sp"
                 android:text="@string/nombre"/>
             <TextView
                 android:id="@+id/textoNobre"
-                android:layout_width="0dp"
-                android:layout_weight="7"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="14sp"
                 android:text=""/>
         </LinearLayout>
         <LinearLayout
@@ -140,17 +144,17 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="17sp"
                 android:text="@string/url"/>
             <TextView
                 android:id="@+id/enlaceUrl"
-                android:layout_width="0dp"
-                android:layout_weight="7"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="14sp"
                 android:text=""
                 android:autoLink="web"/>
         </LinearLayout>
