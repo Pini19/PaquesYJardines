@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">ParquesYJardines</string>
+    <string
+        name="categoria"
+        >Categoría</string>
+    <string
+        name="descripcion"
+        >Descripción</string>
+    <string
+        name="direccion"
+        >Dirección</string>
+<string
+        name="horario"
+        >Horario</string>
+    <string
+        name="identificador"
+        >Identificador</string>
+    <string
+        name="localizacion"
+        >Localización</string>
+    <string
+        name="nombre"
+        >Nombre</string>
+    <string
+        name="url"
+        >URL</string>
 </resources>
