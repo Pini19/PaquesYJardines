@@ -10,6 +10,7 @@ import java.io.IOError;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Parameter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import java.util.logging.Logger;
  * Created by daniel on 11/01/2018.
  */
 
-public class GestoraParquesYJardines extends ArrayList<ParqueYJardin>{
+public class GestoraParquesYJardines extends ArrayList<ParqueYJardin> {
     public GestoraParquesYJardines() {
         CargadoraJSON tarea = new CargadoraJSON(this);
         tarea.execute("http://datos.gijon.es/doc/turismo/parques-jardines.json");
@@ -63,7 +64,7 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin>{
                     reader.beginObject();
 
                     name = reader.nextName();
-                    leerParquesYJardines(reader);
+                    gestora.addAll(leerParquesYJardines(reader));
                     reader.close();
                 } catch (IOException ex) {
                     Logger.getLogger(GestoraParquesYJardines.class.getName()).log(Level.SEVERE, null, ex);
@@ -77,14 +78,23 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin>{
             return true;
         }
 
-        public void /*List<ParqueYJardin>*/ leerParquesYJardines(JsonReader reader) throws IOException {
+        protected void onPostExecute(Boolean result) {
+            if (result) {
+                if (gestora.size() > 0 && MainActivity.adapter != null) {
+                    MainActivity.adapter.notifyDataSetChanged();
+                }
+            }
+
+        }
+
+        public List<ParqueYJardin> leerParquesYJardines(JsonReader reader) throws IOException {
             List<ParqueYJardin> parquesYJardines = new ArrayList<ParqueYJardin>();
             reader.beginArray();
             while (reader.hasNext()) {
-                MainActivity.gestora.add(leerParqueYJardin(reader));
+                parquesYJardines.add(leerParqueYJardin(reader));
             }
             reader.endArray();
-            //return parquesYJardines;
+            return parquesYJardines;
 
         }
 
@@ -164,6 +174,12 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin>{
                 reader.endObject();
             }
             return dato;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
         }
     }
 }
