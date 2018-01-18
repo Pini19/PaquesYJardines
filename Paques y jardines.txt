@@ -1,0 +1,11 @@
+-Lista nombre + direccion descripción breve?
+-Layouts:
+	lista
+	informacion
+		**geolocalizacion primero URL si da mapa interactivo
+	adapter
+-Mirar fragment/dialog
+-Datos json
+-Pasar datos a lista
+-Pasar datos a informacion
+-Menu ordenacion
