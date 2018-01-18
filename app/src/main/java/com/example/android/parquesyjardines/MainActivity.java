@@ -9,9 +9,8 @@ import android.widget.SimpleAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private ListView list;
-    public static SimpleAdapter adapter;
-    public static GestoraParquesYJardines gestora;
-    private SimpleAdapter adaptador;
+    private GestoraParquesYJardines gestora;
+    public static SimpleAdapter adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         list = (ListView) this.findViewById(R.id.listViewPrincipal);
         int [] to = {R.id.textViewNombre, R.id.textViewDireccion};
         String[] from = {"nombre", "direccion"};
-        adapter = new SimpleAdapter(this, gestora , R.layout.adapter_main_list, from , to);
-        list.setAdapter(adapter);
+        adaptador = new SimpleAdapter(this, gestora , R.layout.adapter_main_list, from , to);
+        list.setAdapter(adaptador);
     }
 
     public boolean onOptionItemSelected(MenuItem item){
