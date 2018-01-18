@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:background="">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +16,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,7 +36,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,7 +56,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,7 +76,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,7 +96,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,7 +116,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +137,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -142,7 +157,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
