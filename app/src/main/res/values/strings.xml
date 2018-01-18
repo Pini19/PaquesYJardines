@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ParquesYJardines</string>
+    <string name="orden_nombre">Ordenar alfabeticamente</string>
+    <string name="orden_tipo">Ordenar por caracteristicas</string>
+</resources>
