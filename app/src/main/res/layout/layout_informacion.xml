@@ -14,8 +14,10 @@
         android:paddingEnd="10dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,8 +34,10 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,8 +54,10 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,8 +74,10 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -86,8 +94,10 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -104,8 +114,10 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,8 +135,10 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -141,8 +155,9 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E8EAF6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
