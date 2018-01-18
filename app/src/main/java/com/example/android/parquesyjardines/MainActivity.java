@@ -1,22 +1,33 @@
 package com.example.android.parquesyjardines;
-
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.widget.SimpleAdapter;
 
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
     private GestoraParquesYJardines gestora;
+    private SimpleAdapter adaptador;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        gestora = new GestoraParquesYJardines();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        gestora = new GestoraParquesYJardines();
+    public boolean onOptionItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.ordenNombre:{
+                this.gestora.ordenAlfabetico();
+                this.adaptador.notifyDataSetChanged();
+            }
+            case R.id.ordenTipo:{
+                this.gestora.ordenaTipo();
+                this.adaptador.notifyDataSetChanged();
+            }
+        }
+        return true;
     }
 }

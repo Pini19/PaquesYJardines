@@ -1,0 +1,11 @@
+<menu xmlns:android = "http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ordenNombre"
+        android:orderInCategory="100"
+        android:title="@string/orden_nombre"/>
+    <item
+        android:id="@+id/ordenTipo"
+        android:orderInCategory="100"
+        android:title="@string/orden_tipo"/>
+</menu>

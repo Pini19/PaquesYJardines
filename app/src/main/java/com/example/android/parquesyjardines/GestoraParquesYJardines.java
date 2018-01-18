@@ -14,6 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -29,6 +30,14 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin>{
     public GestoraParquesYJardines() {
         CargadoraJSON tarea = new CargadoraJSON(this);
         tarea.execute("http://datos.gijon.es/doc/turismo/parques-jardines.json");
+    }
+
+    public void ordenaTipo (){
+        Collections.sort(this, new CompareTipo());
+    }
+
+    public void ordenAlfabetico() {
+        Collections.sort(this, new CompareNombre());
     }
 
     class CargadoraJSON extends AsyncTask<String, Integer, Boolean> {

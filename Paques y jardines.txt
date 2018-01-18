@@ -1,4 +1,4 @@
--Lista nombre + direccion ødescripcion breve?
+-Lista nombre + direccion descripci√≥n breve?
 -Layouts:
 	lista
 	informacion
