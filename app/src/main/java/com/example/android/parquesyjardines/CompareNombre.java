@@ -9,5 +9,6 @@ public class CompareNombre implements Comparator<ParqueYJardin> {
 
     @Override
     public int compare (ParqueYJardin pj1, ParqueYJardin pj2){
-        return ((String)pj1.get(ClavesPyJ.nombre.toString())).compareTo((String)pj2.get(ClavesPyJ.nombre.toString()));    }
+        return pj1.get(ClavesPyJ.nombre.toString()).toString().compareTo(pj2.get(ClavesPyJ.nombre.toString()).toString());
+    }
 }
