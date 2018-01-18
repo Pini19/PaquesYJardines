@@ -102,7 +102,10 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin> {
 
         }
 
-
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+        }
 
         public List<ParqueYJardin> leerParquesYJardines(JsonReader reader) throws IOException {
 

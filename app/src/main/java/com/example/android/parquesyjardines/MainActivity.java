@@ -16,6 +16,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Object> data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,14 +26,13 @@ public class MainActivity extends AppCompatActivity {
         data.add("a");
         data.add("b");
         ListView list = findViewById(R.id.list);
-        list.setAdapter(new ArrayAdapter<Object>(this,android.R.layout.simple_list_item_1,data));
+        list.setAdapter(new ArrayAdapter<Object>(this, android.R.layout.simple_list_item_1, data));
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView <? > arg0, View arg1, int arg2, long arg3) {
-                //HashMap itemSelected = (HashMap) data.get(arg2);
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                HashMap itemSelected = (HashMap) data.get(arg2);
                 Intent myintent = new Intent(MainActivity.this, InfoActivity.class);
-                String itemSelected = (String) data.get(arg2);
                 myintent.putExtra("myObject", itemSelected);
                 startActivity(myintent);
             }

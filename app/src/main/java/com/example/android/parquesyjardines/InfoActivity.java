@@ -22,7 +22,6 @@ import java.util.Iterator;
 
 public class InfoActivity extends AppCompatActivity {
 
-    ListView list;
     TextView category;
     TextView description;
     TextView address;
@@ -31,7 +30,6 @@ public class InfoActivity extends AppCompatActivity {
     TextView loc;
     TextView name;
     TextView url;
-    ArrayList<TextView> objetos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,26 +45,15 @@ public class InfoActivity extends AppCompatActivity {
         name = this.findViewById(R.id.textoNombre);
         url = this.findViewById(R.id.enlaceUrl);
 
-        objetos = new ArrayList<>();
-        objetos.add(category);
-        objetos.add(description);
-        objetos.add(address);
-        objetos.add(schedule);
-        objetos.add(id);
-        objetos.add(loc);
-        objetos.add(name);
-        objetos.add(url);
-
-        int i = 0;
-        String s = (String) getIntent().getSerializableExtra("myObject");
-        /*HashMap myMap = (HashMap) getIntent().getSerializableExtra("myObject");
-        Iterator myVeryOwnIterator = myMap.keySet().iterator();
-        while (myVeryOwnIterator.hasNext()) {
-            String key = (String) myVeryOwnIterator.next();
-            String value = (String) myMap.get(key);
-            objetos.get(i).setText(value);*/
-        category.setText(s);
-        i++;
+        HashMap myMap = (HashMap) getIntent().getSerializableExtra("myObject");
+        category.setText((Integer) myMap.get(category));
+        description.setText((Integer) myMap.get(description));
+        address.setText((Integer) myMap.get(address));
+        schedule.setText((Integer) myMap.get(schedule));
+        id.setText((Integer) myMap.get(id));
+        loc.setText((Integer) myMap.get(loc));
+        name.setText((Integer) myMap.get(name));
+        url.setText((Integer) myMap.get(url));
     }
 }
 
