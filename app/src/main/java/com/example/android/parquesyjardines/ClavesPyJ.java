@@ -5,7 +5,7 @@ package com.example.android.parquesyjardines;
  */
 
 public enum ClavesPyJ {
-    nombre, direccion, descripcion, horario, url, id, categorias;
+    nombre, direccion, descripcion, horario, url, id, localizacion, categorias;
 
     public static String[] claves() {
         ClavesPyJ[] claves = ClavesPyJ.values();

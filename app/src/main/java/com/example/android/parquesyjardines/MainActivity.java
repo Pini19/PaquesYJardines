@@ -19,7 +19,6 @@ import android.widget.SimpleAdapter;
 
 public class MainActivity extends AppCompatActivity {
     public static SimpleAdapter adapter;
-    ArrayList<ParqueYJardin> data;
     private ListView list;
     private GestoraParquesYJardines gestora;
 
@@ -35,18 +34,17 @@ public class MainActivity extends AppCompatActivity {
         adapter = new SimpleAdapter(this, gestora, R.layout.adapter_main_list, from, to);
         list.setAdapter(adapter);
 
-        /*list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                ParqueYJardin itemSelected = (ParqueYJardin) data.get(arg2);
-                Log.v("ItemSelected",itemSelected.toString());
+                ParqueYJardin itemSelected = (ParqueYJardin) gestora.get(arg2);
                 Intent myintent = new Intent(MainActivity.this, InfoActivity.class);
                 myintent.putExtra("myObject", itemSelected);
                 startActivity(myintent);
             }
 
-        });*/
+        });
     }
 
     @Override

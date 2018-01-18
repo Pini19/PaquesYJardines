@@ -11,6 +11,8 @@
     <string name="nombre">Nombre</string>
     <string name="url">URL</string>
 
+    <string name="dato_no_existe">No existe este dato</string>
+
     <string name="orden_nombre">Ordenar alfabeticamente</string>
     <string name="orden_tipo">Ordenar por caracteristicas</string>
 </resources>

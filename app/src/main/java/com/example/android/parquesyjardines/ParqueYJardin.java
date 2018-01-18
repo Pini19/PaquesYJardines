@@ -17,6 +17,7 @@ public class ParqueYJardin extends HashMap<String, Object> implements Comparable
         this.put(ClavesPyJ.horario.toString(), horario);
         this.put(ClavesPyJ.url.toString(), url);
         this.put(ClavesPyJ.id.toString(), identificador);
+        this.put(ClavesPyJ.localizacion.toString(), localizacion);
         this.put(ClavesPyJ.categorias.toString(), categorias);
     }
 

@@ -2,7 +2,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="10dp">
 
     <LinearLayout
@@ -24,24 +24,6 @@
 
             <TextView
                 android:id="@+id/textoCat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textSize="14sp"
-                android:text=""/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textSize="20sp"
-                android:text="@string/descripcion"/>
-            <TextView
-                android:id="@+id/textoDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -93,14 +75,15 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:textSize="20sp"
-                android:text="@string/identificador"/>
+                android:text="@string/descripcion"/>
             <TextView
-                android:id="@+id/textoId"
+                android:id="@+id/textoDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:textSize="14sp"
-                android:text=""/>
+                android:text=""
+                android:autoLink="web"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -142,7 +125,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
