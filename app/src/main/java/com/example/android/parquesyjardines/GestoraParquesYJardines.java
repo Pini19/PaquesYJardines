@@ -63,7 +63,7 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin>{
                     reader.beginObject();
 
                     name = reader.nextName();
-                    gestora.addAll(leerParquesYJardines(reader));
+                    leerParquesYJardines(reader);
                     reader.close();
                 } catch (IOException ex) {
                     Logger.getLogger(GestoraParquesYJardines.class.getName()).log(Level.SEVERE, null, ex);
@@ -77,14 +77,14 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin>{
             return true;
         }
 
-        public List<ParqueYJardin> leerParquesYJardines(JsonReader reader) throws IOException {
+        public void /*List<ParqueYJardin>*/ leerParquesYJardines(JsonReader reader) throws IOException {
             List<ParqueYJardin> parquesYJardines = new ArrayList<ParqueYJardin>();
             reader.beginArray();
             while (reader.hasNext()) {
-                parquesYJardines.add(leerParqueYJardin(reader));
+                MainActivity.gestora.add(leerParqueYJardin(reader));
             }
             reader.endArray();
-            return parquesYJardines;
+            //return parquesYJardines;
 
         }
 
