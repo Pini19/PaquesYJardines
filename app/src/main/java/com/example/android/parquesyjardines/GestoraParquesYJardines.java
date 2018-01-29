@@ -1,8 +1,14 @@
 package com.example.android.parquesyjardines;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.JsonReader;
 import android.util.JsonToken;
+import android.view.View;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,9 +28,13 @@ import java.util.logging.Logger;
  */
 
 public class GestoraParquesYJardines extends ArrayList<ParqueYJardin> {
-    public GestoraParquesYJardines() {
+    public static MainActivity contexto;
+    public GestoraParquesYJardines(MainActivity activity) {
+        super();
+        contexto = activity;
         CargadoraJSON tarea = new CargadoraJSON(this);
         tarea.execute("http://datos.gijon.es/doc/turismo/parques-jardines.json");
+
     }
 
     public void ordenaTipo() {
@@ -55,10 +65,12 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin> {
 
                     String name = reader.nextName();
 
+
                     reader.beginObject();
 
                     name = reader.nextName();
                     gestora.addAll(leerParquesYJardines(reader));
+
                     reader.close();
                 } catch (IOException ex) {
                     Logger.getLogger(GestoraParquesYJardines.class.getName()).log(Level.SEVERE, null, ex);
@@ -76,6 +88,7 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin> {
             if (result) {
                 if (gestora.size() > 0 && MainActivity.adapter != null) {
                     MainActivity.adapter.notifyDataSetChanged();
+                    contexto.mostrarNotificacion(gestora.size());
                 }
             }
 
@@ -175,5 +188,7 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin> {
             super.onPreExecute();
 
         }
+
+
     }
 }
