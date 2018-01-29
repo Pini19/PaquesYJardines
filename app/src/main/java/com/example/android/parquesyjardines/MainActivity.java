@@ -1,6 +1,10 @@
 package com.example.android.parquesyjardines;
 
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.AdapterView;
@@ -20,6 +24,7 @@ import android.widget.SimpleAdapter;
 public class MainActivity extends AppCompatActivity {
     public static SimpleAdapter adapter;
     private ListView list;
+    private static final int NOTIF_ALERTA_ID =99;
     private GestoraParquesYJardines gestora;
 
     @Override
@@ -30,9 +35,11 @@ public class MainActivity extends AppCompatActivity {
         list = (ListView) this.findViewById(R.id.listViewPrincipal);
         int[] to = {R.id.textViewNombre, R.id.textViewDireccion};
         String[] from = {"nombre", "direccion"};
-        gestora = new GestoraParquesYJardines();
+        gestora = new GestoraParquesYJardines(this);
         adapter = new SimpleAdapter(this, gestora, R.layout.adapter_main_list, from, to);
         list.setAdapter(adapter);
+
+
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -45,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
     }
 
     @Override
@@ -77,4 +85,41 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void mostrarNotificacion(int cantidadPYJ) {
+
+        String ns = this.NOTIFICATION_SERVICE;
+        NotificationManager notManager = (NotificationManager) getSystemService(ns);
+
+        int icono = android.R.drawable.stat_notify_chat;
+        CharSequence textoTitulo = "Parques y jardines";
+        CharSequence textoPrincipal="Numero de parques y jardines: " + cantidadPYJ;
+        long hora = System.currentTimeMillis();
+        Notification.Builder caracteristicas = new Notification.Builder(this)
+                .setSmallIcon(icono)
+                .setWhen(hora)
+                .setContentTitle(textoTitulo)
+                .setContentText(textoPrincipal);
+        Context contexto = getApplicationContext();
+        Intent lanzar = new Intent(contexto,
+                this.getClass());
+
+        PendingIntent contIntent = PendingIntent.getActivity(contexto, NOTIF_ALERTA_ID, lanzar, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        caracteristicas.setContentIntent(contIntent);
+
+        Notification notificacion=caracteristicas.build();
+
+        //AutoCancel: cuando se pulsa la notificaión ésta desaparece
+        notificacion.flags |= Notification.FLAG_AUTO_CANCEL;
+
+        //Añadir sonido, vibración y luces
+        notificacion.defaults |= Notification.DEFAULT_SOUND;
+        notificacion.defaults |= Notification.DEFAULT_VIBRATE;
+        notificacion.defaults |= Notification.DEFAULT_LIGHTS;
+
+        notificacion.defaults |= Notification.DEFAULT_ALL;
+
+        notManager.notify(NOTIF_ALERTA_ID, notificacion);
+    }
 }
+
