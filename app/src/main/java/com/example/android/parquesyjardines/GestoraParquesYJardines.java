@@ -55,6 +55,7 @@ public class GestoraParquesYJardines extends ArrayList<ParqueYJardin> {
 
                     String name = reader.nextName();
 
+
                     reader.beginObject();
 
                     name = reader.nextName();
