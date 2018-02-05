@@ -16,4 +16,6 @@
 
     <string name="orden_nombre">Ordenar alfabeticamente</string>
     <string name="orden_tipo">Ordenar por caracteristicas</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>
