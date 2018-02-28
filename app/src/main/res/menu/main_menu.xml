@@ -1,4 +1,12 @@
-<menu xmlns:android = "http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuActualizar"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/refresh_icon"
+        android:title="@string/actualizar"/>
 
     <item
         android:id="@+id/ordenNombre"

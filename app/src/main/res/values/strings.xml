@@ -14,6 +14,7 @@
 
     <string name="dato_no_existe">No existe este dato</string>
 
+    <string name="actualizar">Actualizar</string>
     <string name="orden_nombre">Ordenar alfabeticamente</string>
     <string name="orden_tipo">Ordenar por caracteristicas</string>
 </resources>

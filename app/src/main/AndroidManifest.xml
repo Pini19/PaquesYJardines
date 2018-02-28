@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity" android:launchMode="singleTop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,6 +22,7 @@
 
         <activity
             android:name=".InfoActivity"
-            android:label="@string/informacion" />
+            android:label="@string/informacion"
+            android:parentActivityName=".MainActivity"/>
     </application>
 </manifest>

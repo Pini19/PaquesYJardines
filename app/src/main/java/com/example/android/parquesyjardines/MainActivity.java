@@ -71,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.menuActualizar:{
+                actualizarDatos();
+                this.adapter.notifyDataSetChanged();
+            }
             case R.id.ordenNombre: {
                 this.gestora.ordenAlfabetico();
                 this.adapter.notifyDataSetChanged();
@@ -83,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void actualizarDatos() {
+        gestora = new GestoraParquesYJardines(this);
+        int[] to = {R.id.textViewNombre, R.id.textViewDireccion};
+        String[] from = {ClavesPyJ.nombre.toString(), ClavesPyJ.direccion.toString()};
+        adapter = new SimpleAdapter(this, gestora, R.layout.adapter_main_list, from, to);
+        list.setAdapter(adapter);
     }
 
     public void mostrarNotificacion(int cantidadPYJ) {
